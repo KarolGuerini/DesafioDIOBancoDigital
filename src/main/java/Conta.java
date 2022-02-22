@@ -1,20 +1,24 @@
-public class Conta {
+public class Conta implements IConta {
 
     private int agency;
     private int account;
     private int balance;
 
-    public void withdraw(){
+    @Override
+    public void withdraw(double valor) {
 
     }
 
-    public void deposit(){
+    @Override
+    public void deposit(double valor) {
 
     }
 
-    public void transfer(){
+    @Override
+    public void transfer(double valor, Conta contaDestino) {
 
     }
+
 
     public int getAgency() {
         return agency;
@@ -27,6 +31,7 @@ public class Conta {
     public int getBalance() {
         return balance;
     }
+
 
 }
 
