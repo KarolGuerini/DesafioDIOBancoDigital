@@ -1,21 +1,4 @@
-public class ContaPoupanca {
-
-    private int agency;
-    private int account;
-    private int balance;
-
-    public void withdraw(){
+public class ContaPoupanca extends Conta {
 
 
-    }
-
-    public void deposit(){
-
-
-    }
-
-    public void transfer(){
-
-
-    }
 }
