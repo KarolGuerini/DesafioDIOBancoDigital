@@ -4,7 +4,7 @@ public abstract class Conta implements IConta {
 
     protected int agency;
     protected int account;
-    protected int balance;
+    protected double balance;
 
     private static int SEQUENTIAL = 1;
 
@@ -15,16 +15,20 @@ public abstract class Conta implements IConta {
 
     @Override
     public void withdraw(double valor) {
+        balance = balance - valor;
 
     }
 
     @Override
     public void deposit(double valor) {
+        balance = balance + valor;
 
     }
 
     @Override
     public void transfer(double valor, Conta contaDestino) {
+        this.withdraw(valor);
+        contaDestino.deposit(valor);
 
     }
 
@@ -37,10 +41,14 @@ public abstract class Conta implements IConta {
         return account;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-
+    protected void imprimirInfosComuns() {
+        System.out.printf("Agencia: %d%n", this.agency);
+        System.out.printf("Conta: %d%n", this.account);
+        System.out.printf("Saldo: %.2f%n", this.balance);
+    }
 }
 

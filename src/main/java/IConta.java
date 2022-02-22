@@ -6,4 +6,6 @@ public interface IConta {
 
     void transfer(double valor, Conta contaDestino);
 
+    void imprimirExtrato();
+
 }
